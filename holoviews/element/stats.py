@@ -17,6 +17,9 @@ class StatisticsElement(Chart):
 
     __abstract = True
 
+    # Ensure Interface does not add an index
+    _auto_indexable_1d = False
+
     def __init__(self, data, kdims=None, vdims=None, **params):
         if isinstance(data, Element):
             params.update(get_param_values(data))
@@ -118,9 +121,6 @@ class Distribution(StatisticsElement):
     group = param.String(default='Distribution', constant=True)
 
     vdims = param.List(default=[Dimension('Density')], bounds=(0, 1))
-
-    # Ensure Interface does not add an index
-    _auto_indexable_1d = False
 
 
 class Violin(BoxWhisker):
