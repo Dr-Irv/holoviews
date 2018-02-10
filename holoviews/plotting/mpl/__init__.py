@@ -18,6 +18,7 @@ from .heatmap import * # noqa (API import)
 from .path import * # noqa (API import)
 from .plot import * # noqa (API import)
 from .raster import * # noqa (API import)
+from .sankey import * # noqa (API import)
 from .stats import * # noqa (API import)
 from .tabular import * # noqa (API import)
 
@@ -166,6 +167,7 @@ Store.register({Curve: CurvePlot,
                 Chord: ChordPlot,
                 Nodes: PointPlot,
                 EdgePaths: PathPlot,
+                Sankey: SankeyPlot,
 
                 # Annotation plots
                 VLine: VLinePlot,
@@ -292,6 +294,11 @@ options.Chord = Options('plot', xaxis=None, yaxis=None)
 options.Nodes = Options('style', edgecolors='black', facecolors=Cycle(),
                         marker='o', s=20**2)
 options.EdgePaths = Options('style', color='black')
+options.Sankey = Options('plot', xaxis=None, yaxis=None, fig_size=400,
+                         aspect=1.6, show_frame=False)
+options.Sankey = Options('style', node_color=Cycle('tab20'),
+                         edge_color='grey', node_edgecolors='black',
+                         edge_alpha=0.6, node_size=6)
 
 # Statistics
 options.Distribution = Options('style', facecolor=Cycle(), edgecolor='black',
