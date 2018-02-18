@@ -169,6 +169,7 @@ Store.register({Curve: CurvePlot,
                 Arrow: ArrowPlot,
                 Spline: SplinePlot,
                 Text: TextPlot,
+                Labels: LabelsPlot,
 
                 # Path plots
                 Contours: ContourPlot,
